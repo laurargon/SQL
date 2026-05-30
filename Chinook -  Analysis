@@ -28,7 +28,7 @@ GROUP BY a.AlbumId, a.Title
 ORDER BY AlbumPrice DESC
 LIMIT 5;
 
---#4 Show Customers (their full names, customer ID, and country) who are not in the US. (Hint: != or <> can be used to say "is not equal to").
+--#4 Show Customers (their full names, customer ID, and country) who are not in the US. 
 SELECT FirstName, LastName, CustomerId, Country 
 FROM chinook.customers 
 WHERE Country != "USA";
@@ -38,7 +38,7 @@ SELECT FirstName, LastName, CustomerId, Country
 FROM chinook.customers 
 WHERE Country = "Brazil";
 
---#6 Find the Invoices of customers who are from Brazil. The resulting table should show the customer's full name, Invoice ID, Date of the invoice, and billing country.
+--#6 Find the Invoices of customers who are from Brazil. 
 SELECT cust.FirstName, cust.LastName, inv.InvoiceId, inv.BillingCountry, inv.InvoiceDate
 FROM chinook.invoices as inv 
 LEFT JOIN chinook.customers as cust 
@@ -54,7 +54,7 @@ WHERE Title = "Sales Support Agent";
 SELECT DISTINCT BillingCountry
 FROM chinook.invoices;
 
---#9 Provide a query that shows the invoices associated with each sales agent. The resulting table should include the Sales Agent's full name.
+--#9 Provide a query that shows the invoices associated with each sales agent. 
 SELECT emp.FirstName, emp.LastName, inv.InvoiceId
 FROM chinook.Employees emp
 JOIN chinook.Customers cust
